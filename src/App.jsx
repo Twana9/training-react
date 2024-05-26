@@ -9,6 +9,8 @@ import QuestionGame from "./StateManage/Question.jsx";
 import FeedbackForm from "./StateManage/FeedbackForm.jsx";
 import Menue from "./StateManage/Menue.jsx";
 import Menu from "./StateManage/ChangableMenu.jsx";
+import StopWatch from "./EscapeHatches/SimpleStopWatch.jsx";
+import Counter from "./Zustand/Counter.jsx";
 export default function App() {
   const [products, setProducts] = useState(PRODUCTS);
 
@@ -21,7 +23,9 @@ export default function App() {
       {/* <QuestionGame /> */}
       {/* <FeedbackForm /> */}
       {/* <Menue /> */}
-      <Menu />
+      {/* <Menu /> */}
+      {/* <StopWatch /> */}
+      {/* <Counter /> */}
     </>
   );
 }
