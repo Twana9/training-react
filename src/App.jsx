@@ -11,6 +11,8 @@ import Menue from "./StateManage/Menue.jsx";
 import Menu from "./StateManage/ChangableMenu.jsx";
 import StopWatch from "./EscapeHatches/SimpleStopWatch.jsx";
 import Counter from "./Zustand/Counter.jsx";
+import Form from "./Component/DataPosting.jsx";
+import Data from "./Component/NewData.jsx";
 export default function App() {
   const [products, setProducts] = useState(PRODUCTS);
 
@@ -26,6 +28,8 @@ export default function App() {
       {/* <Menu /> */}
       {/* <StopWatch /> */}
       {/* <Counter /> */}
+      {/* <Form /> */}
+      <Data />
     </>
   );
 }

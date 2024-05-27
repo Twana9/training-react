@@ -1,0 +1,11 @@
+<main class="p-5">
+  <p class=" text-[19px] bg-red-500 text-center text-yellow-400">
+  hellow world</p>
+  <div class="w-full h-10 bg-violet-200 border-violet-600 border-2 rounded-md my-4 p-2">
+    <p class="text-center text-[19px] font-mono font-extrabold">a div</p>
+  </div>
+  <!-- layout -->
+
+  <div class="fixed w-10 h-10 bg-red-500 top-0 "></div>
+
+</main>
