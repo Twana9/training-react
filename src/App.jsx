@@ -16,15 +16,22 @@ import Data from "./Component/NewData.jsx";
 /////////////////////////////////////////////////
 import { Routes, Route, Link } from "react-router-dom";
 import { Home } from "./Pages/Home";
-import { Book } from "./Pages/Books.jsx";
-import { BookList } from "./Pages/BookList.jsx";
-import { About } from "./Pages/About.jsx";
+
+import { NotFound } from "./Pages/NotFound.jsx";
+import { BookLayout } from "./Pages/BookLayout.jsx";
+import { BookRoutes } from "./Pages/BookRoutes.jsx";
 
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
 
   return (
     <>
+      {/* //this is important for the sidebars its good thing to 
+      //have different
+      routes for the same path in some cases */}
+      {/* <Routes>
+        <Route path="/books" element={<h1>Extra Content</h1>} />
+      </Routes> */}
       <nav>
         <ul>
           <li>
@@ -37,8 +44,15 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books" element={<BookList />} />
-        <Route path="/books/:id" element={<Book />} />
+        <Route path="/books/*" element={<BookRoutes />} />
+        ////////////////////
+        <Route path="/books" element={<BookLayout />}>
+          <Route index element={<BookList />} />
+          <Route path=":id" element={<Book />} />
+          <Route path="new" element={<NewBooks />} />
+        </Route>
+        //////////////////
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
