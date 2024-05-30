@@ -15,3 +15,10 @@ export function BookRoutes() {
     </>
   );
 }
+
+// // if you want that context to show up do this
+// <Route element={<BookLayout/>}>
+//         <Route index element={<BookList />} />
+//         <Route path=":id" element={<Book />} />
+//         <Route path="new" element={<NewBooks />} />
+// </Route>

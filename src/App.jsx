@@ -14,7 +14,7 @@ import Counter from "./Zustand/Counter.jsx";
 import Form from "./Component/DataPosting.jsx";
 import Data from "./Component/NewData.jsx";
 /////////////////////////////////////////////////
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import { Home } from "./Pages/Home";
 
 import { NotFound } from "./Pages/NotFound.jsx";
@@ -35,7 +35,12 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              style={({ isActive }) => (isActive ? { color: "red" } : {})}
+              to="/"
+            >
+              Home
+            </NavLink>
           </li>
           <li>
             <Link to="/books">Books</Link>
@@ -44,22 +49,32 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+
+        {/* in case you want to cearate a new Component for the Routes 
+         way two*/}
         <Route path="/books/*" element={<BookRoutes />} />
-        ////////////////////
-        <Route path="/books" element={<BookLayout />}>
-          <Route index element={<BookList />} />
-          <Route path=":id" element={<Book />} />
-          <Route path="new" element={<NewBooks />} />
-        </Route>
-        //////////////////
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
+
+////////////////////
+{
+  /* in case you want the links to be appear in all books path
+ in way one*/
+}
+{
+  /* <Route path="/books" element={<BookLayout />}>
+  <Route index element={<BookList />} />
+  <Route path=":id" element={<Book />} />
+  <Route path="new" element={<NewBooks />} />
+</Route> */
+}
+//////////////////
 {
   /* <ProductsList products={products} />
-      <Cart /> */
+  <Cart /> */
 }
 {
   /* <DataFetching /> */
