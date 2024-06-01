@@ -20,6 +20,7 @@ import { Home } from "./Pages/Home";
 import { NotFound } from "./Pages/NotFound.jsx";
 import { BookLayout } from "./Pages/BookLayout.jsx";
 import { BookRoutes } from "./Pages/BookRoutes.jsx";
+import { NewBooks } from "./Pages/NewBooks.jsx";
 
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
@@ -53,6 +54,7 @@ export default function App() {
         {/* in case you want to cearate a new Component for the Routes 
          way two*/}
         <Route path="/books/*" element={<BookRoutes />} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
@@ -72,37 +74,3 @@ export default function App() {
 </Route> */
 }
 //////////////////
-{
-  /* <ProductsList products={products} />
-  <Cart /> */
-}
-{
-  /* <DataFetching /> */
-}
-{
-  /* <List /> */
-}
-{
-  /* <QuestionGame /> */
-}
-{
-  /* <FeedbackForm /> */
-}
-{
-  /* <Menue /> */
-}
-{
-  /* <Menu /> */
-}
-{
-  /* <StopWatch /> */
-}
-{
-  /* <Counter /> */
-}
-{
-  /* <Form /> */
-}
-{
-  /* <Data /> */
-}
