@@ -4,7 +4,7 @@ export function NotFound() {
   const navigate = useNavigate();
   useEffect(() => {
     setTimeout(() => {
-      navigate(-2);
+      navigate("/", { state: "not containted" });
     }, 1000);
   }, []);
   return <h1>not found</h1>;

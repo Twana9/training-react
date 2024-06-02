@@ -14,7 +14,7 @@ import Counter from "./Zustand/Counter.jsx";
 import Form from "./Component/DataPosting.jsx";
 import Data from "./Component/NewData.jsx";
 /////////////////////////////////////////////////
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import { Home } from "./Pages/Home";
 
 import { NotFound } from "./Pages/NotFound.jsx";
@@ -24,12 +24,12 @@ import { NewBooks } from "./Pages/NewBooks.jsx";
 
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
-
+  const location = useLocation();
   return (
     <>
       {/* //this is important for the sidebars its good thing to 
       //have different
-      routes for the same path in some cases */}
+    routes for the same path in some cases */}
       {/* <Routes>
         <Route path="/books" element={<h1>Extra Content</h1>} />
       </Routes> */}
@@ -48,6 +48,7 @@ export default function App() {
           </li>
         </ul>
       </nav>
+      {location.state}
       <Routes>
         <Route path="/" element={<Home />} />
 
