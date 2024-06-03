@@ -1,11 +1,84 @@
-<main class="p-5">
-  <p class=" text-[19px] bg-red-500 text-center text-yellow-400">
-  hellow world</p>
-  <div class="w-full h-10 bg-violet-200 border-violet-600 border-2 rounded-md my-4 p-2">
-    <p class="text-center text-[19px] font-mono font-extrabold">a div</p>
+<main class="h-[1000px] p-5">
+  <p class="bg-red-100 text-center text-[19px] text-yellow-400">hellow world</p>
+  <div class="my-4 h-10 w-full rounded-md border-2 border-violet-600 bg-violet-200 p-2">
+    <p class="text-center font-mono text-[19px] font-extrabold">a div</p>
   </div>
   <!-- layout -->
 
-  <div class="fixed w-10 h-10 bg-red-500 top-0 "></div>
+  <div class="fixed top-[1px] h-10 w-10 bg-red-500"></div>
+  <div class="flex flex-row justify-between space-x-2">
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+    <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+  </div>
+  <div class="grid grid-cols-5 gap-2">
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+    <div class="h-12 bg-violet-500"></div>
+  </div>
+  <div class="md:text-red-500  max-md:text-yellow-500 max-sm:text-green-500">
+    <p>i will appear for device resultion </p>
+  </div>
+  <button class="my-4 text-white bg-blue-400 rounded-md p-2  border-red-700 hover:bg-slate-600 focus:outline-none focus:ring focus:ring-cyan-300 active:bg-yellow-500">Click me</button>
+  <input type="text" class="bg-gray-200  rounded-md p-1 focus:outline-none text-white">
+
+  <ul class="my-2 space-y-2 ">
+    <li class="p-2  first:bg-yellow-200">item 1</li>
+    <li class="p-2 odd:bg-green-200 even:bg-pink-200">item 2</li>
+    <li class="p-2 odd:bg-green-200 even:bg-pink-200">item 3</li>
+    <li class="p-2 odd:bg-green-200 even:bg-pink-200">item 4</li>
+    <li class="p-2  odd:bg-green-200 even:bg-pink-200">item 5</li>
+  </ul>
+  <!-- Theme Dark -->
+  <div class="card">
+    <h3 class="text-base font-medium tracking-tight text-slate-900 dark:text-white"> this is a text element</h3>
+  <p class="mt-2 text-sm text-slate-500 dark:text-slate-200">this is even a longer p element</p>
+  <button id="toggleDark"
+  class="text-blue-900 py-2 px-4 mt-8 bg-blue-100 rounded-md font-medium text-sm" 
+  onclick={document.body.classList.toggle("dark")}
+  >Toggle Dark Mode</button>
+  </div>
+<button class="special-Button">Click Me</button>
+  <p class="text-2xl text-chestnut bg-stone-100 p-[12px]">Chestnut Color</p>
 
 </main>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", ()=>{
+  const toggleDark = document.getElementById("toggleDark");
+  toggleDark.addEventListener("click", ()=>{
+    if(document.documentElement.classList.containes("dark")){
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+    alert("click");
+  });
+});
+</script>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-gray-800;
+  }
+
+  .special-Button {
+    @apply transform rounded-lg  bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:from-purple-600 hover:to-blue-600 focus:ring focus:ring-purple-100 active:bg-blue-700;
+  }
+}
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors:{
+        chestnut: "#973f29",
+      }
+    },
+  },
+  plugins: [],
+}
