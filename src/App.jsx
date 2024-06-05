@@ -21,45 +21,47 @@ import { NotFound } from "./Pages/NotFound.jsx";
 import { BookLayout } from "./Pages/BookLayout.jsx";
 import { BookRoutes } from "./Pages/BookRoutes.jsx";
 import { NewBooks } from "./Pages/NewBooks.jsx";
+import MailClientApp2 from "./StateManage/MailClientApp2.jsx";
 
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
-  return (
-    <>
-      {/* //this is important for the sidebars its good thing to 
-      //have different
-    routes for the same path in some cases */}
-      {/* <Routes>
-        <Route path="/books" element={<h1>Extra Content</h1>} />
-      </Routes> */}
-      <nav>
-        <ul>
-          <li>
-            <NavLink
-              style={({ isActive }) => (isActive ? { color: "red" } : {})}
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <Link to="/books">Books</Link>
-          </li>
-        </ul>
-      </nav>
-      {location.state}
-      <Routes>
-        <Route path="/" element={<Home />} />
+  return <MailClientApp2 />;
+  // return (
+  //   <>
+  //     {/* //this is important for the sidebars its good thing to
+  //     //have different
+  //   routes for the same path in some cases */}
+  //     {/* <Routes>
+  //       <Route path="/books" element={<h1>Extra Content</h1>} />
+  //     </Routes> */}
+  //     <nav>
+  //       <ul>
+  //         <li>
+  //           <NavLink
+  //             style={({ isActive }) => (isActive ? { color: "red" } : {})}
+  //             to="/"
+  //           >
+  //             Home
+  //           </NavLink>
+  //         </li>
+  //         <li>
+  //           <Link to="/books">Books</Link>
+  //         </li>
+  //       </ul>
+  //     </nav>
+  //     {location.state}
+  //     <Routes>
+  //       <Route path="/" element={<Home />} />
 
-        {/* in case you want to cearate a new Component for the Routes 
-         way two*/}
-        <Route path="/books/*" element={<BookRoutes />} />
+  //       {/* in case you want to cearate a new Component for the Routes
+  //        way two*/}
+  //       <Route path="/books/*" element={<BookRoutes />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </>
-  );
+  //       <Route path="*" element={<NotFound />} />
+  //     </Routes>
+  //   </>
+  // );
 }
 
 ////////////////////
