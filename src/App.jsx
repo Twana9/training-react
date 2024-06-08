@@ -22,11 +22,12 @@ import { BookLayout } from "./Pages/BookLayout.jsx";
 import { BookRoutes } from "./Pages/BookRoutes.jsx";
 import { NewBooks } from "./Pages/NewBooks.jsx";
 import MailClientApp2 from "./StateManage/MailClientApp2.jsx";
+import FilterList from "./SearchingAlgorithm/SortingSearch.jsx";
 
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
-  return <MailClientApp2 />;
+  return <FilterList />;
   // return (
   //   <>
   //     {/* //this is important for the sidebars its good thing to
