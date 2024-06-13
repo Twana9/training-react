@@ -16,6 +16,7 @@ const initialState = {
     },
   },
 };
+
 export const useStore2 = create((set) => ({
   ...initialState,
   updateAdressStreet: (street) =>
@@ -39,7 +40,7 @@ export const useStore = create((set) => ({
       },
     })),
 }));
-
+//////Cart Stuff //////////////////////////////////////////////////
 const useCart = create((set) => ({
   cart: [],
   addToCart: (product) =>
