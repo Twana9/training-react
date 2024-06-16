@@ -28,7 +28,12 @@ export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
 
-  return <></>;
+  return (
+    <>
+      {" "}
+      <StopWatch />
+    </>
+  );
 }
 // return (
 //   <>
@@ -78,7 +83,7 @@ export default function App() {
   <Route path="new" element={<NewBooks />} />
 </Route> */
 }
-//////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 ////////////for the Zustand stufff ////////////////
 // const [streeta, setStreeta] = useState("");
