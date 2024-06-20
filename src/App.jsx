@@ -24,6 +24,7 @@ import MailClientApp2 from "./StateManage/MailClientApp2.jsx";
 import FilterList from "./SearchingAlgorithm/SortingSearch.jsx";
 import ContactApp from "./contactApp/ContactApp.jsx";
 import { useStore } from "./store.js";
+import Alert from "./EscapeHatches/Alert.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -31,7 +32,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <StopWatch />
+      <Alert />
     </>
   );
 }
