@@ -27,6 +27,7 @@ import { useStore } from "./store.js";
 import Alert from "./EscapeHatches/Alert.jsx";
 import Chat from "./EscapeHatches/Chat.jsx";
 import Scroll from "./EscapeHatches/Scroll.jsx";
+import Forward from "./EscapeHatches/Forward.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -34,7 +35,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <Scroll />
+      <Forward />
     </>
   );
 }
