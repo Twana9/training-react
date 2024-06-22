@@ -26,6 +26,7 @@ import ContactApp from "./contactApp/ContactApp.jsx";
 import { useStore } from "./store.js";
 import Alert from "./EscapeHatches/Alert.jsx";
 import Chat from "./EscapeHatches/Chat.jsx";
+import Scroll from "./EscapeHatches/Scroll.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -33,7 +34,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <Chat />
+      <Scroll />
     </>
   );
 }
