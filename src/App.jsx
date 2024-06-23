@@ -29,6 +29,7 @@ import Chat from "./EscapeHatches/Chat.jsx";
 import Scroll from "./EscapeHatches/Scroll.jsx";
 import Forward from "./EscapeHatches/Forward.jsx";
 import Video from "./EscapeHatches/Video.jsx";
+import FirstPost from "./ApiFetching/FirstPost.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -36,7 +37,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <Video />
+      <FirstPost />
     </>
   );
 }
