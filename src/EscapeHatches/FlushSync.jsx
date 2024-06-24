@@ -19,6 +19,11 @@ export default function FlushSync() {
       inline: "center",
     });
   }
+  function handleClickB(index) {
+    setIndex(index);
+    document.getElementsByClassName("a")[index].style.background = "red";
+  }
+
   return (
     <>
       <button onClick={handleClick}>Next</button>
@@ -26,6 +31,8 @@ export default function FlushSync() {
       <ul style={{ display: "flex", gap: "5px", overflow: "scroll" }}>
         {catList.map((cat, i) => (
           <li
+            className="a"
+            onClick={() => handleClickB(i)}
             ref={index === i ? selectedRef : null}
             key={cat.id}
             style={{ background: i === index && "red", padding: "5px" }}
