@@ -31,6 +31,7 @@ import Forward from "./EscapeHatches/Forward.jsx";
 import Video from "./EscapeHatches/Video.jsx";
 import FirstPost from "./ApiFetching/FirstPost.jsx";
 import FlushSync from "./EscapeHatches/FlushSync.jsx";
+import SinglePost from "./ApiFetching/SinglePost.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -38,7 +39,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <FlushSync />
+      <SinglePost />
     </>
   );
 }
