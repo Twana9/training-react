@@ -1,25 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function SinglePost() {
-  const [post, setPost] = useState({});
+  const [postComment, setPostComment] = useState([]);
   const [selectedID, setSelectedID] = useState(1);
   const [error, setError] = useState(null);
-  const [formID, setFormID] = useState(1);
+  const [idFromButton, setIdFromButton] = useState(1);
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${formID}`)
+      .get(
+        `https://jsonplaceholder.typicode.com/posts/${idFromButton}/comments`
+      )
       .then((res) => {
         console.log(res.data);
-        setPost(res.data);
+        setPostComment(res.data);
       })
       .catch((err) => {
         console.log(err);
         setError(err.message);
       });
-  }, [formID]);
-  function handleClick(ID) {
-    setFormID(ID);
+  }, [idFromButton]);
+  function handleClick() {
+    setIdFromButton(selectedID);
   }
   return (
     <>
@@ -32,8 +34,23 @@ export default function SinglePost() {
             setSelectedID(Number(value) || "");
         }}
       />
-      <button onClick={() => handleClick(selectedID)}>Get</button>
-      {error ? <p>{error}</p> : <div>{post.title}</div>}
+      <button onClick={handleClick}>Get</button>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <div>
+          <p>Post Comments</p>
+          <br />
+          <ul>
+            {postComment.map((c) => (
+              <li key={c.id}>
+                <p>{c.name}</p>
+                <p>{c.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 }
