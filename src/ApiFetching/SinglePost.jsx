@@ -5,6 +5,7 @@ export default function SinglePost() {
   const [selectedID, setSelectedID] = useState(1);
   const [error, setError] = useState(null);
   const [idFromButton, setIdFromButton] = useState(1);
+  //iif you want to get indivitual comments this is the method to getting it
 
   useEffect(() => {
     axios
