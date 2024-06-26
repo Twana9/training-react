@@ -4,10 +4,11 @@ export default function SinglePost() {
   const [post, setPost] = useState({});
   const [selectedID, setSelectedID] = useState(1);
   const [error, setError] = useState(null);
+  const [formID, setFormID] = useState(1);
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${selectedID}`)
+      .get(`https://jsonplaceholder.typicode.com/posts/${formID}`)
       .then((res) => {
         console.log(res.data);
         setPost(res.data);
@@ -16,7 +17,10 @@ export default function SinglePost() {
         console.log(err);
         setError(err.message);
       });
-  }, [selectedID]);
+  }, [formID]);
+  function handleClick(ID) {
+    setFormID(ID);
+  }
   return (
     <>
       <input
@@ -28,6 +32,7 @@ export default function SinglePost() {
             setSelectedID(Number(value) || "");
         }}
       />
+      <button onClick={() => handleClick(selectedID)}>Get</button>
       {error ? <p>{error}</p> : <div>{post.title}</div>}
     </>
   );
