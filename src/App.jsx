@@ -34,6 +34,7 @@ import FlushSync from "./EscapeHatches/FlushSync.jsx";
 import SinglePost from "./ApiFetching/SinglePost.jsx";
 import ApiPutting from "./ApiFetching/ApiPutting.jsx";
 import Delete from "./ApiFetching/Delete.jsx";
+import Put from "./ApiFetching/Put.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -41,7 +42,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <Delete />
+      <Put />
     </>
   );
 }
