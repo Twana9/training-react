@@ -14,6 +14,7 @@ export default function PostTwoSinglePost() {
       })
       .then((res) => {
         setPost(res.data);
+        setError(null);
         console.log(res);
       })
       .catch((err) => {

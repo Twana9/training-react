@@ -39,6 +39,7 @@ import GetTwo from "./ApiFetching/GetTwo.jsx";
 import GetTwoSinglePost from "./ApiFetching/GetTwoSinglePost.jsx";
 import PostTwoSinglePost from "./ApiFetching/PostTwoSinglePost.jsx";
 import DeleteTwo from "./ApiFetching/DeleteTwo.jsx";
+import PutTwo from "./ApiFetching/PutTwo.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -46,7 +47,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <DeleteTwo />
+      <PutTwo />
     </>
   );
 }
