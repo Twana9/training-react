@@ -36,6 +36,7 @@ import ApiPutting from "./ApiFetching/ApiPutting.jsx";
 import Delete from "./ApiFetching/Delete.jsx";
 import Put from "./ApiFetching/Put.jsx";
 import GetTwo from "./ApiFetching/GetTwo.jsx";
+import GetTwoSinglePost from "./ApiFetching/GetTwoSinglePost.jsx";
 export default function App() {
   // const [products, setProducts] = useState(PRODUCTS);
   const location = useLocation();
@@ -43,7 +44,7 @@ export default function App() {
   return (
     <>
       {" "}
-      <GetTwo />
+      <GetTwoSinglePost />
     </>
   );
 }
