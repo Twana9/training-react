@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Home, BookList, Book } from "./Pages";
+import { Home, BookList, Book, NewBooks, NotFound } from "./Pages";
 
 export default function App() {
   return (
@@ -18,6 +18,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<BookList />} />
         <Route path="/books/:id" element={<Book />} />
+        <Route path="/books/new" element={<NewBooks />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

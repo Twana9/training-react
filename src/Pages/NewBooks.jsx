@@ -1,3 +1,3 @@
 export function NewBooks() {
-  return <h1>NewBooks</h1>;
+  return <h1>New Book</h1>;
 }
