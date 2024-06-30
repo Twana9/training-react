@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom";
-// import { useOutletContext } from "react-router-dom";
+
 export function Book() {
   const { id } = useParams();
-  // const obj = useOutletContext();
   return (
     <>
-      <h1>Book {id}</h1>
+      <h1>Book {id} </h1>
     </>
   );
 }
+
 // the /:id is just a parameter and the Book is one unchangable Component version
 
 // The /:id syntax in your route definition is a way to create a dynamic

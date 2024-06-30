@@ -1,57 +1,28 @@
-import { useState } from "react";
-import PRODUCTS from "./products.js";
-import ProductsList from "./PorductList";
-import Cart from "./Cart";
-import DataFetching from "./Component/DataFetching.jsx";
+import { Routes, Route, Link } from "react-router-dom";
+import { Home, BookList, Book } from "./Pages";
 
-import List from "./Component/List.jsx";
-import QuestionGame from "./StateManage/Question.jsx";
-import FeedbackForm from "./StateManage/FeedbackForm.jsx";
-import Menue from "./StateManage/Menue.jsx";
-import Menu from "./StateManage/ChangableMenu.jsx";
-import StopWatch from "./EscapeHatches/SimpleStopWatch.jsx";
-import Form from "./Component/DataPosting.jsx";
-import Data from "./Component/NewData.jsx";
-/////////////////////////////////////////////////
-import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
-import { Home } from "./Pages/Home";
-
-import { NotFound } from "./Pages/NotFound.jsx";
-import { BookLayout } from "./Pages/BookLayout.jsx";
-import { BookRoutes } from "./Pages/BookRoutes.jsx";
-import { NewBooks } from "./Pages/NewBooks.jsx";
-import MailClientApp2 from "./StateManage/MailClientApp2.jsx";
-import FilterList from "./SearchingAlgorithm/SortingSearch.jsx";
-import ContactApp from "./contactApp/ContactApp.jsx";
-import { useStore } from "./store.js";
-import Alert from "./EscapeHatches/Alert.jsx";
-import Chat from "./EscapeHatches/Chat.jsx";
-import Scroll from "./EscapeHatches/Scroll.jsx";
-import Forward from "./EscapeHatches/Forward.jsx";
-import Video from "./EscapeHatches/Video.jsx";
-import FirstPost from "./ApiFetching/FirstPost.jsx";
-import FlushSync from "./EscapeHatches/FlushSync.jsx";
-import SinglePost from "./ApiFetching/SinglePost.jsx";
-import ApiPutting from "./ApiFetching/ApiPutting.jsx";
-import Delete from "./ApiFetching/Delete.jsx";
-import Put from "./ApiFetching/Put.jsx";
-import GetTwo from "./ApiFetching/GetTwo.jsx";
-import GetTwoSinglePost from "./ApiFetching/GetTwoSinglePost.jsx";
-import PostTwoSinglePost from "./ApiFetching/PostTwoSinglePost.jsx";
-import DeleteTwo from "./ApiFetching/DeleteTwo.jsx";
-import PutTwo from "./ApiFetching/PutTwo.jsx";
-import UserData from "./ApiFetching/UserData.jsx";
 export default function App() {
-  // const [products, setProducts] = useState(PRODUCTS);
-  const location = useLocation();
-
   return (
     <>
-      {" "}
-      <UserData />
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/books">BookList</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<BookList />} />
+        <Route path="/books/:id" element={<Book />} />
+      </Routes>
     </>
   );
 }
+
 // return (
 //   <>
 //     {/* //this is important for the sidebars its good thing to
