@@ -4,6 +4,9 @@ import { Home, BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
 export default function App() {
   return (
     <>
+      <Routes location="/books">
+        <Route path="/books" element={<h1>Extra Books</h1>} />
+      </Routes>
       <nav>
         <ul>
           <li>
