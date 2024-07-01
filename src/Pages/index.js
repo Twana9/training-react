@@ -5,5 +5,6 @@ import { Contact } from "./Contact";
 import { Home } from "./Home";
 import { NewBooks } from "./NewBooks";
 import { NotFound } from "./NotFound";
+import { BookLayout } from "./BookLayout";
 
-export { About, BookList, Book, Contact, Home, NewBooks, NotFound };
+export { About, BookList, Book, Contact, Home, NewBooks, NotFound, BookLayout };
