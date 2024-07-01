@@ -8,7 +8,7 @@ export function BookLayout() {
       <Link to="/books/2">book 2</Link>
       <br />
       <Link to="/books/new">book new</Link>
-      <Outlet />
+      <Outlet context={{ company: "astepor" }} />
     </>
   );
 }
