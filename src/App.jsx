@@ -7,7 +7,9 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" replace>
+              Home
+            </Link>
           </li>
           <li>
             <Link to="/books">BookList</Link>
