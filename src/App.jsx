@@ -1,5 +1,6 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 import { Home, BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
+import "./App.css";
 
 export default function App() {
   return (
@@ -7,12 +8,12 @@ export default function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/" replace>
-              Home
-            </Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/books">BookList</Link>
+            <NavLink end to="/books">
+              BookList
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -47,12 +48,14 @@ export default function App() {
 //     <nav>
 //       <ul>
 //         <li>
-//           <NavLink
-//             style={({ isActive }) => (isActive ? { color: "red" } : {})}
-//             to="/"
-//           >
-//             Home
-//           </NavLink>
+//  <NavLink
+//     style={({ isActive }) => ({
+//       color: isActive ? "red" : "",
+//     })}
+//     to="/"
+//   >
+//     {({ isActive }) => (isActive ? "Active Home" : "Home")}
+//   </NavLink>
 //         </li>
 //         <li>
 //           <Link to="/books">Books</Link>
