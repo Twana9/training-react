@@ -4,9 +4,6 @@ import { Home, BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
 export default function App() {
   return (
     <>
-      <Routes location="/books">
-        <Route path="/books" element={<h1>Extra Books</h1>} />
-      </Routes>
       <nav>
         <ul>
           <li>
@@ -19,26 +16,30 @@ export default function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/books" element={<BookLayout />}>
           <Route index element={<BookList />} />
           <Route path=":id" element={<Book />} />
           <Route path="new" element={<NewBooks />} />
         </Route>
-        {/* <Route path="/books" element={<BookList />} />
-        <Route path="/books/:id" element={<Book />} />
-        <Route path="/books/new" element={<NewBooks />} /> */}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
 
+{
+  /* <Route path="/books" element={<BookList />} />
+<Route path="/books/:id" element={<Book />} />
+<Route path="/books/new" element={<NewBooks />} /> */
+}
 // return (
 //   <>
 //     {/* //this is important for the sidebars its good thing to
 //     //have different
 //   routes for the same path in some cases */}
-//     {/* <Routes>
+//     {/* <Routes location="/books"> this will be allways rendered
 //       <Route path="/books" element={<h1>Extra Content</h1>} />
 //     </Routes> */}
 //     <nav>
