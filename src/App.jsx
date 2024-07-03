@@ -1,44 +1,61 @@
 import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
-import { Home, BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
+import { BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
 import "./App.css";
+import { Home } from "./PagesTwo/Home";
+import { UserList } from "./PagesTwo/UserLIst";
+import { User } from "./PagesTwo/User";
 
 export default function App() {
-  const location = useLocation();
-  console.log(location);
   return (
     <>
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <NavLink end to="/books">
-              BookList
-            </NavLink>
+            <Link to="/users">Users</Link>
           </li>
         </ul>
       </nav>
-      {location.state}
-      <br />
       <Routes>
         <Route path="/" element={<Home />} />
-
-        <Route path="/books" element={<BookLayout />}>
-          <Route index element={<BookList />} />
-          <Route path=":id" element={<Book />} />
-          <Route path="new" element={<NewBooks />} />
-        </Route>
-
-        <Route path="*" element={<NotFound />} />
+        <Route path="/users" element={<UserList />} />
+        <Route path="/users/:id" element={<User />} />
       </Routes>
     </>
   );
 }
 
 {
+  // const location = useLocation();
+  // console.log(location);
+  // <nav>
+  //   <ul>
+  //     <li>
+  //       <NavLink to="/">Home</NavLink>
+  //     </li>
+  //     <li>
+  //       <NavLink end to="/books">
+  //         BookList
+  //       </NavLink>
+  //     </li>
+  //   </ul>
+  // </nav>
+  // {location.state}
+  // <br />
+  // <Routes>
+  //   <Route path="/" element={<Home />} />
+  //   <Route path="/books" element={<BookLayout />}>
+  //     <Route index element={<BookList />} />
+  //     <Route path=":id" element={<Book />} />
+  //     <Route path="new" element={<NewBooks />} />
+  //   </Route>
+  //   <Route path="*" element={<NotFound />} />
+  // </Routes>
+  /////////////////////////////////////////////////////////////////////////////
   /* <Route path="/books" element={<BookList />} />
-<Route path="/books/:id" element={<Book />} />
+  <Route path="/books/:id" element={<Book />} />
 <Route path="/books/new" element={<NewBooks />} /> */
 }
 // return (
