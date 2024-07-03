@@ -1,8 +1,10 @@
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import { Home, BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
 import "./App.css";
 
 export default function App() {
+  const location = useLocation();
+  console.log(location);
   return (
     <>
       <nav>
@@ -17,6 +19,8 @@ export default function App() {
           </li>
         </ul>
       </nav>
+      {location.state}
+      <br />
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -105,3 +109,6 @@ export default function App() {
 //         onChange={(e) => setStreeta(e.target.value)}
 //       />
 //       <button onClick={() => updateAdressStreet(streeta)}>update</button>
+
+////////State/////
+//you can use state in the component path to the Link and the place you put the Router
