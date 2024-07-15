@@ -4,11 +4,13 @@ import "./App.css";
 import { Home } from "./PagesTwo/Home";
 import { UserList } from "./PagesTwo/UserLIst";
 import { User } from "./PagesTwo/User";
+import ToolTip from "./Transition/ToolTip";
 
 export default function App() {
   return (
     <>
-      <nav>
+      <ToolTip />
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -22,7 +24,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/users/:id" element={<User />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }
