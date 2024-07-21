@@ -13,7 +13,7 @@ export default function ToolTip() {
         Open
       </button>
       {isOpen && (
-        <ul className="list">
+        <ul className="list ">
           <li>Name</li>
           <li>Age</li>
           <li>Gender</li>
@@ -23,3 +23,5 @@ export default function ToolTip() {
     </div>
   );
 }
+//if you want to give it animation in both way the only way yet i found to do that is
+// to use display and transform in both open and close so the transition in order for hte transition to work
