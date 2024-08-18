@@ -5,11 +5,12 @@ import { Home } from "./PagesTwo/Home";
 import { UserList } from "./PagesTwo/UserLIst";
 import { User } from "./PagesTwo/User";
 import ToolTip from "./Transition/ToolTip";
+import Trans from "./TransitionGroup/Trans";
 
 export default function App() {
   return (
     <>
-      <ToolTip />
+      <Trans />
       {/* <nav>
         <ul>
           <li>
