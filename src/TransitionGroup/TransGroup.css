@@ -8,7 +8,6 @@
   height: 100px;
   width: 100px;
   background: salmon;
-  transition: all 500ms ease;
 }
 
 .fade-enter {
@@ -18,7 +17,7 @@
 .fade-enter-active {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 400ms, transform 400ms;
 }
 .fade-exit {
   opacity: 1;
@@ -27,5 +26,5 @@
 .fade-exit-active {
   opacity: 0;
   transform: translateY(-20px);
-  transition: opacity 500ms, transform 500ms;
+  transition: opacity 400ms, transform 400ms;
 }

@@ -4,11 +4,12 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 export default function TransGroup() {
   const [items, setItems] = useState([]);
+
   function addItem() {
     setItems([
       ...items,
       {
-        id: new Date().getMilliseconds(),
+        id: new Date().getTime(),
         name: `Item : ${items.length + 1}`,
       },
     ]);

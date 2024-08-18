@@ -1,6 +1,6 @@
 import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import { BookList, Book, NewBooks, NotFound, BookLayout } from "./Pages";
-// import "./App.css";
+
 import { Home } from "./PagesTwo/Home";
 import { UserList } from "./PagesTwo/UserLIst";
 import { User } from "./PagesTwo/User";
