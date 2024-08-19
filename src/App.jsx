@@ -7,11 +7,12 @@ import { User } from "./PagesTwo/User";
 import ToolTip from "./Transition/ToolTip";
 import Trans from "./TransitionGroup/Trans";
 import TransGroup from "./TransitionGroup/TransGroup";
+import FirstFramer from "./Framer-Motion/FirstFramer";
 
 export default function App() {
   return (
     <>
-      <TransGroup />
+      <FirstFramer />
       {/* <nav>
         <ul>
           <li>
