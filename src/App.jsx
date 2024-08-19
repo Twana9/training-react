@@ -8,11 +8,12 @@ import ToolTip from "./Transition/ToolTip";
 import Trans from "./TransitionGroup/Trans";
 import TransGroup from "./TransitionGroup/TransGroup";
 import FirstFramer from "./Framer-Motion/FirstFramer";
+import Gusture from "./Framer-Motion/Gusture";
 
 export default function App() {
   return (
     <>
-      <FirstFramer />
+      <Gusture />
       {/* <nav>
         <ul>
           <li>
