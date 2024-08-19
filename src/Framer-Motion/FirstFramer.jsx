@@ -32,18 +32,22 @@ export default function FirstFramer() {
             initial={{
               rotate: 0,
               scale: 0,
+              y: 0,
             }}
             animate={{
               rotate: "180deg",
               scale: 1,
+              y: [0, 150, -150, -150, 0],
             }}
             exit={{
               rotate: 0,
               scale: 0,
+              y: [0, 150, -150, -150, 0],
             }}
             transition={{
-              duration: 0.3,
+              duration: 0.5,
               ease: "easeInOut",
+              times: [0, 0.25, 0.5, 0.85, 1],
             }}
             style={{
               height: 150,
