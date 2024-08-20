@@ -1,18 +1,28 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useTransition } from "react";
 export default function ScrollAnimations() {
+  //the motion div is a bar filling with the progress of scrolling
+  // of the whole page even if there were other componenets,
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress);
+  const background = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["rgb(0, 0, 255)", "rgb(255, 255, 0)"]
+  );
   return (
     <>
       <motion.div
         style={{
-          scaleX: scrollYProgress,
+          // scaleX: scrollYProgress,
+          scaleX,
           transformOrigin: "left",
 
           width: "100%",
-          height: "20px",
+          height: "15px",
           position: "sticky",
           top: 0,
-          background: "orange",
+          background,
         }}
       ></motion.div>
       <div

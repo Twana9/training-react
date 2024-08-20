@@ -17,6 +17,7 @@ export default function App() {
   return (
     <>
       <ScrollAnimations />
+
       {/* <nav>
         <ul>
           <li>
