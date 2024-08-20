@@ -10,11 +10,12 @@ import TransGroup from "./TransitionGroup/TransGroup";
 import FirstFramer from "./Framer-Motion/FirstFramer";
 import Gusture from "./Framer-Motion/Gusture";
 import AnimationControls from "./Framer-Motion/AnimationControls";
+import AnimationOnView from "./Framer-Motion/AnimationOnView";
 
 export default function App() {
   return (
     <>
-      <AnimationControls />
+      <AnimationOnView />
       {/* <nav>
         <ul>
           <li>
