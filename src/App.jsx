@@ -12,11 +12,12 @@ import Gusture from "./Framer-Motion/Gusture";
 import AnimationControls from "./Framer-Motion/AnimationControls";
 import AnimationOnView from "./Framer-Motion/AnimationOnView";
 import ScrollAnimations from "./Framer-Motion/ScrollAnimations";
+import GroupAnimation from "./Framer-Motion/GroupAnimation";
 
 export default function App() {
   return (
     <>
-      <ScrollAnimations />
+      <GroupAnimation />
 
       {/* <nav>
         <ul>
