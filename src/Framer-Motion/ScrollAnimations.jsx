@@ -1,5 +1,5 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { useTransition } from "react";
+import { useRef } from "react";
 export default function ScrollAnimations() {
   //the motion div is a bar filling with the progress of scrolling
   // of the whole page even if there were other componenets,
@@ -10,8 +10,19 @@ export default function ScrollAnimations() {
     [0, 1],
     ["rgb(0, 0, 255)", "rgb(255, 255, 0)"]
   );
+  const contentRef = useRef(null);
+  const { scrollYProgress: divScrollYProgress } = useScroll({
+    target: contentRef,
+    offset: ["end end", "start start"],
+  });
+
+  const divBackground = useTransform(
+    divScrollYProgress,
+    [0, 1],
+    ["rgb(0, 255, 0)", "rgb(255, 0, 0)"]
+  );
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <motion.div
         style={{
           // scaleX: scrollYProgress,
@@ -63,14 +74,28 @@ export default function ScrollAnimations() {
           architecto quisquam rem vero totam, odio distinctio quae dolore dolor
           exercitationem doloremque.
         </p>
-        <p>
+
+        <div ref={contentRef}>
+          <motion.div
+            style={{
+              scaleX: divScrollYProgress,
+              transformOrigin: "left",
+              width: "100%",
+              height: "15px",
+
+              background: divBackground,
+            }}
+          ></motion.div>
+          {/* Your content that you want the progress bar to react to */}
           Illum error facere iusto architecto nesciunt accusamus asperiores
           suscipit mollitia repudiandae quis? Sunt asperiores, facilis excepturi
           et architecto dolor at vel voluptatem eius nobis itaque a, similique
           nemo consequatur esse velit quos odit, perspiciatis eaque voluptates
           repudiandae aliquid doloremque possimus! Minima maxime laboriosam eum
           nesciunt dolore? Recusandae impedit placeat repellat?
-        </p>
+        </div>
+        {/* other content */}
+
         <p>
           Magni porro voluptas, saepe voluptatibus, quidem a eos tenetur dolorem
           sapiente unde quia! Sapiente aliquid quo suscipit est. Voluptatem,
@@ -112,6 +137,6 @@ export default function ScrollAnimations() {
           corporis repellendus quidem. Suscipit, illum?
         </p>
       </div>
-    </>
+    </div>
   );
 }
