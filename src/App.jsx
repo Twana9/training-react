@@ -17,7 +17,7 @@ import GroupAnimation from "./Framer-Motion/GroupAnimation";
 export default function App() {
   return (
     <>
-      <GroupAnimation />
+      <ScrollAnimations />
 
       {/* <nav>
         <ul>

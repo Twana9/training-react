@@ -22,7 +22,7 @@ export default function ScrollAnimations() {
     ["rgb(0, 255, 0)", "rgb(255, 0, 0)"]
   );
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       <motion.div
         style={{
           // scaleX: scrollYProgress,
@@ -82,11 +82,11 @@ export default function ScrollAnimations() {
               transformOrigin: "left",
               width: "100%",
               height: "15px",
+              position: "relative",
 
               background: divBackground,
             }}
           ></motion.div>
-          {/* Your content that you want the progress bar to react to */}
           Illum error facere iusto architecto nesciunt accusamus asperiores
           suscipit mollitia repudiandae quis? Sunt asperiores, facilis excepturi
           et architecto dolor at vel voluptatem eius nobis itaque a, similique
@@ -94,7 +94,6 @@ export default function ScrollAnimations() {
           repudiandae aliquid doloremque possimus! Minima maxime laboriosam eum
           nesciunt dolore? Recusandae impedit placeat repellat?
         </div>
-        {/* other content */}
 
         <p>
           Magni porro voluptas, saepe voluptatibus, quidem a eos tenetur dolorem

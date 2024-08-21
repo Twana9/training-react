@@ -20,22 +20,22 @@ export default function GroupAnimation() {
     <div style={{ padding: "10px", height: "100vh" }}>
       <h1>Items List</h1>
       <button onClick={addItem}>Add</button>
-      <motion.div
+      <div
         style={{
           display: "flex",
           gap: "2px",
           flexWrap: "wrap",
           width: "90%",
         }}
-        layout
       >
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence>
           {items.map((item) => (
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0 }}
-              transition={{ duration: 1, ease: easeInOut }}
+              initial={{ scale: 0, y: "-100px" }}
+              animate={{ scale: 1, y: "0" }}
+              exit={{ scale: 0, y: "-100px" }}
+              transition={{ duration: 0.3, ease: easeInOut }}
+              layout
               key={item.id}
               onClick={() => removeItem(item.id)}
               style={{ width: "150px", height: "150px", background: "red" }}
@@ -44,7 +44,9 @@ export default function GroupAnimation() {
             </motion.div>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </div>
   );
 }
+//the layout alone is for transition for repositioning
+//the mode popover and others are for time of reposition (berfore , after, sametime)
