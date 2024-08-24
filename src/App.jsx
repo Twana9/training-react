@@ -13,11 +13,12 @@ import AnimationControls from "./Framer-Motion/AnimationControls";
 import AnimationOnView from "./Framer-Motion/AnimationOnView";
 import ScrollAnimations from "./Framer-Motion/ScrollAnimations";
 import GroupAnimation from "./Framer-Motion/GroupAnimation";
+import OneByOne from "./Framer-Motion/OneByOne";
 
 export default function App() {
   return (
     <>
-      <ScrollAnimations />
+      <OneByOne />
 
       {/* <nav>
         <ul>
