@@ -18,7 +18,7 @@ import OneByOne from "./Framer-Motion/OneByOne";
 export default function App() {
   return (
     <>
-      <OneByOne />
+      <ScrollAnimations />
 
       {/* <nav>
         <ul>
